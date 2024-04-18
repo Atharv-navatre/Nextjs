@@ -1,3 +1,8 @@
+
+
+.fonts{
+  font-family: 'Poppins',sans-serif;
+}
 .footer {
   position: relative;
   width: 100%;
@@ -175,6 +180,9 @@ ul li a:hover:before{
   transform:scaleX(1);
 }
 
+.rounded-corner {
+  border-bottom-right-radius: 100px;
+}
 
   
   @media (max-width: 640px) {
@@ -187,6 +195,8 @@ ul li a:hover:before{
   }
 
   /*  asdfasdf*/
+
+
 
 
 

@@ -20,5 +20,6 @@ async function compareProduct(f_scrapData:any,s_scrapData:any) {
             return ({ f_scrapData, s_scrapData });
         }
     }
+    
 }
 export default compareProduct;

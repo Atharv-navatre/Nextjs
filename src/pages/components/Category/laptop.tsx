@@ -17,7 +17,6 @@ function Laptop() {
         "Apple 2022 MacBook Air Laptop with M2 chip: 34.46 cm (13.6-inch) Liquid Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera. Works with iPhone/iPad; Space Grey",
         "Dell Inspiron 7430 14 FHD + (1920x1200) IPS Touch 2 -in -1 Laptop | Intel i7 - 1355U 10 - Core | Iris Xe Graphics | Backlit Keyboard | Fingerprint | Thunderbolt 4 | WiFi 6E | 16GB LPDDR5 1TB SSD | Win10",
         "Lenovo IdeaPad Gaming 3 AMD Ryzen 5 5500H 15.6 (39.62cm) FHD IPS 300nits 144Hz Gaming Laptop (8GB/512GB SSD/Windows 11/NVIDIA RTX 2050 4GB/Alexa/3 Month Game Pass/Onyx Grey/2.32Kg), 82K20289IN",
-        "Lenovo Legion 5 Pro AMD Ryzen 7 5800H40cm 500Nits QHD Gaming Laptop(16GB/1TB SSD/RTX 3060 6GB GDDR6 Graphics/165Hz/Windows 11/Office 2021/RGB Backlit/3mnth Xbox Game Pass/Storm Grey/2.45Kg)82JQ00JCIN    "
 
     ];
 
@@ -38,13 +37,12 @@ function Laptop() {
         "/assets/cateorgyWisePhoto/laptop/l13.png",
         "/assets/cateorgyWisePhoto/laptop/l14.png",
         "/assets/cateorgyWisePhoto/laptop/l15.png",
-        "/assets/cateorgyWisePhoto/laptop/l16.png",
     ];
 
     const ratings: any = [
         4.5, 3.2, 4.8, 2.9, 5.0,
         4.1, 3.7, 4.5, 2.8, 4.6,
-        3.9, 4.2, 4.7, 3.5, 4.9
+        3.9, 4.2, 4.7, 3.5
       ];
       
 
@@ -56,16 +54,17 @@ function Laptop() {
     };
 
     return (
-    <>  
-       <div className="flex flex-wrap m-0 h-38 p-0">
-            {titles.map((title, index) => (
-              <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg m-4 cursor-pointer" onClick={() => handleDivClick(title, prices[index], images[index])}>
-                <div className="img h-38 flex justify-center items-center">
-                  <img src={images[index]} alt="Phone" className="w-full h-full object-cover" />
-                </div>
-                <div className="px-4 py-2">
+      <>
+        <div className="flex flex-wrap justify-center m-0 p-0">
+          {titles.map((title, index) => (
+            <div key={index} style={{ height: '585px', width: "900px", position: 'relative' }} className={`max-w-sm rounded overflow-hidden justify-center shadow-lg m-4 cursor-pointer ${index < 3 ? 'mt-24' : ''}`} onClick={() => handleDivClick(title, prices[index], images[index])}>
+              <div style={{height:"270px" , width:"270px"}} className="img ml-12 flex justify-center items-center text-center"> {/* Added text-center */}
+                <img src={images[index]} alt="Phone" className="w-full h-full object-cover" /> {/* Apply object-cover to ensure images fit inside */}
+              </div>
+              <div className="px-4 py-2" >
+                <div>
                   <div className="font-bold text-lg mb-1">{title}</div>
-                  <p className="text-gray-700 text-base mb-1">Price: ₹{prices[index]}</p>
+                  <p className="text-gray-700 text-base mb-1">Price: {prices[index]}</p>
                   {/* Add the rating div here */}
                   <div className="flex items-center">
                     <svg className="fill-current text-gray-500 w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -73,19 +72,18 @@ function Laptop() {
                     </svg>
                     <p className="text-gray-700">{ratings[index]}</p>
                   </div>
-                  {/* End of rating div */}
+                </div>
+                {/* End of rating div */}
+                <div style={{ position: 'absolute', bottom: '1rem', left: '20%', transform: 'translateX(-50%)' }}>
                   <button className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Details</button>
                 </div>
               </div>
+            </div>
           ))}
         </div>
-                    
-
-    </>
-    
-  
-
+      </>
     );
-}
+   
+    }
 
 export default Laptop;
